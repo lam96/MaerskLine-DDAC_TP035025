@@ -1,0 +1,49 @@
+﻿@model MaerskLine.Models.Schedule
+@{
+    ViewBag.Title = "ScheduleDeatils";
+}
+
+<h2>ScheduleDeatils</h2>
+
+<div>
+    <h4>Schedule</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(m => m.Origin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(m => m.Origin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(m => m.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(m => m.Destination)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(m => m.DepartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(m => m.DepartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(m => m.ArriveTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(m => m.ArriveTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ScheduleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,73 @@
+﻿@model MaerskLine.ViewModels.MaerskViewModel
+@{
+    ViewBag.Title = "ChooseShip";
+}
+
+<h2>ChooseShip</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Schedule ID
+        </th>
+        <th>
+            Schedule Origin
+        </th>
+        <th>
+            Schedule Destination
+        </th>
+        <th>
+            Schedule Departure Time
+        </th>
+        <th>
+            Schedule Arrival Time
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Model.Schedule.ScheduleId
+        </td>
+        <td>
+            @Model.Schedule.Origin
+        </td>
+        <td>
+            @Model.Schedule.Destination
+        </td>
+        <td>
+            @Model.Schedule.DepartTime
+        </td>
+        <td>
+            @Model.Schedule.ArriveTime
+        </td>
+    </tr>
+</table>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Ship Name
+        </th>
+        <th>
+            Ship ContainerSpace
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Ships)
+    {
+        <tr>
+            <td>
+                @item.ShipName
+            </td>
+            <td>
+                @item.ShipContainerNo
+            </td>
+            <td>
+
+                @Html.ActionLink("Select", "SelectCustomer", "Booking", new { ShipId = item.ShipId, ScheduleId = @Model.Schedule.ScheduleId }, new { @class = "btn btn-success btn-xs" })
+            </td>
+        </tr>
+    }
+</table>
+

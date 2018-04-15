@@ -1,0 +1,19 @@
+﻿@model MaerskLine.Models.Ship
+@{
+    ViewBag.Title = "ShipDetails";
+}
+
+<h2>ShipDetails</h2>
+
+
+@using (Html.BeginForm("Create", "Ship"))
+{
+    @Html.LabelFor(m => m.ShipName)
+    @Html.TextBoxFor(m => m.ShipName)
+
+    @Html.LabelFor(m => m.ShipContainerNo)
+    @Html.TextBoxFor(m => m.ShipContainerNo)
+
+
+    <button type="submit">Submit</button>
+}
